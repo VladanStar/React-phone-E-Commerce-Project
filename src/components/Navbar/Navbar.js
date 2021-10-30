@@ -7,7 +7,7 @@ import {ButtonContainer} from "../Button/Button"
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-m bg-primary navbar-dark px-sm-5">
+      <NavWrapper className="navbar navbar-expand-m navbar-dark px-sm-5">
         {/* https://www.iconfinder.com/icons/1243689/call_phone_icon
             Creative Commons (Attribution 3.0 Unported);
                https://www.iconfinder.com/Makoto_msk */}
@@ -31,8 +31,15 @@ export default class Navbar extends Component {
 
           </ButtonContainer>
         </Link>
-      </nav>
+      </NavWrapper>
     );
   }
 }
-
+const NavWrapper= styled.nav`
+background:var(--mainBlue);
+.nav-link{
+    color:var(--mainWhite) !important;
+    font-size:1.3rem;
+  text-transfor:capitalize !important;
+}
+`; 
