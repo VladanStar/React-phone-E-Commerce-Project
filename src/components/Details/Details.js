@@ -8,16 +8,9 @@ export default class Details extends Component {
   render() {
     return (
       <ProductConsumer>
-       {value => {
-          const {
-            id,
-            company,
-            img,
-            info,
-            price,
-            title,
-            inCart
-          } = value.detailProduct;
+        {(value) => {
+          const { id, company, img, info, price, title, inCart } =
+            value.detailProduct;
           return (
             <div className="container py-5">
               {/* title */}
@@ -49,28 +42,21 @@ export default class Details extends Component {
                     <p className="text-capitalize font-weight-bold mt-3 mb-0">
                       some info about product:
                     </p>
-                    <p className="text-muted lead">
-                        {info}
-                    </p>
+                    <p className="text-muted lead">{info}</p>
                     {/* buttons */}
                     <div>
-                    <Link to="/">
-                      <ButtonContainer>
-                        back to products
+                      <Link to="/">
+                        <ButtonContainer>back to products</ButtonContainer>
+                      </Link>
+                      <ButtonContainer
+                        cart
+                        disabled={inCart ? true : false}
+                        onClick={() => {
+                          value.addToCart(id);
+                        }}
+                      >
+                        {inCart ? "inCart" : "add to cart"}
                       </ButtonContainer>
-                    </Link>
-                    <ButtonContainer
-                    cart
-             
-                    disabled={inCart ? true : false}
-                    onClick={() => {
-                   value.addToCart(id);
-                    
-                    }}
-                    >
-                      {inCart?'inCart':'add to cart'}
-                    </ButtonContainer>
-
                     </div>
                   </h4>
                 </div>
