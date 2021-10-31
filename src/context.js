@@ -53,7 +53,7 @@ export default class ProductProvider extends Component {
         value={{
           ...this.state,
           handleDetail: this.handleDetail,
-          addToCart: this.addToCar,
+          addToCart: this.addToCart,
         }}
       >
         {/* <button onClick={this.tester}>test me</button> */}
