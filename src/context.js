@@ -28,8 +28,8 @@ export default class ProductProvider extends Component {
   handleDetail = () => {
     console.log("Hello from Details");
   };
-  addToCart = () => {
-    console.log("Hello from to Cart");
+  addToCart = (id) => {
+   console.log(`hello from add to cart.id ${id}`)
   };
   // tester = () => {
   //   console.log("State products:", this.state.products[0].inCart);
@@ -63,4 +63,5 @@ export default class ProductProvider extends Component {
   }
 }
 const ProductConsumer = ProductContext.Consumer;
+
 export { ProductProvider, ProductConsumer };
