@@ -11,6 +11,8 @@ export default class ProductProvider extends Component {
     products: [],
     detailProduct: detailProduct,
     cart: [],
+    modalOpen:true,
+    modalProduct:detailProduct,
   };
   componentDidMount() {
     this.setProducts();
@@ -48,6 +50,20 @@ export default class ProductProvider extends Component {
       return { products: tempProducts, cart:[...this.state.cart, product] };
     },()=>{console.log(this.state)});
   };
+
+
+  openModal =(id)=>{
+      const product = this.getItem(id);
+      this.setState(()=>{
+        return {modalProduct:product, modalOpen:true}
+      })
+  }
+  closeModal =()=>{
+    this.setState(()=>{
+      return{modalOpen:false}
+    })
+
+  }
   // tester = () => {
   //   console.log("State products:", this.state.products[0].inCart);
   //   console.log("Data products:", storeProducts[0].inCart);
