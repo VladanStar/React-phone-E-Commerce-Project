@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { ProductProvider } from "../src/context";
 import reportWebVitals from "./reportWebVitals";
+<script crossorigin src="..."></script>
 
 ReactDOM.render(
   <ProductProvider>
